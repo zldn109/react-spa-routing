@@ -20,7 +20,7 @@
 
 ## 🔥추천 의존성 스택
 - **react-router-dom**: SPA 내 라우팅 관리
-- **axios 또는 fetch API**: 외부 API를 통해 뉴스 데이터를 가져옴
+- **axios**: 외부 API를 통해 뉴스 데이터를 가져옴
 - **Styled-Components or Tailwind**: 스타일 관리
 
 
@@ -29,4 +29,6 @@
 1️⃣ https://newsapi.org/ 에 가입하고 newsapi API키를 발급 받습니다.<br/>
 2️⃣ 이후는 newsapi 웹문서를 읽고 학습하시면 됩니다.<br/>
 
-
+## 🧱참고 자료
+1. [react-router](https://reactrouter.com/) 공식문서
+2. [axios](https://axios-http.com/kr/) 공식문서
