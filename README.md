@@ -25,8 +25,8 @@
 ## 📍외부 API 사용법
 이 프로젝트에서는 외부 뉴스 API를 사용하여 데이터를 가져옵니다.<br/>
 1️⃣ https://newsapi.org/ 에 가입하고 newsapi API키를 발급 받습니다.<br/>
-2️⃣ 프로젝트의 루트에 `.env` 파일을 생성해서 `API KEY`를 노출하지 마세요.
-3️⃣이후는 newsapi 웹문서를 읽고 학습하시면 됩니다.<br/>
+2️⃣ 프로젝트의 루트에 `.env` 파일을 생성하고 환경변수를 설정하여 본인의 `API KEY`를 노출하지 마세요. <br/>
+3️⃣ 이후는 newsapi 웹문서를 읽고 학습하시면 됩니다.<br/>
 
 ## 🧱참고 자료
 1. [react-router](https://reactrouter.com/) 공식문서
