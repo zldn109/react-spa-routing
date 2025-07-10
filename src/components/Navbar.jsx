@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className={styles.base}>
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <div className={styles.logoWrapper}>NewsViewer</div>
+          <div className={styles.logo}>NewsViewer</div>
         </div>
       </div>
     </nav>
