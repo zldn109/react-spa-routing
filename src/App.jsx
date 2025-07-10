@@ -1,9 +1,17 @@
 import "./index.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import NotFound from "@/pages/NotFound";
 
 function App() {
   return (
     <>
-      <h1>그리디 미션 : 뉴스 웹 뷰어 시이작!</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
