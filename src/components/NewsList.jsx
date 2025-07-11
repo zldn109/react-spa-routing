@@ -7,6 +7,7 @@ import {
   newsState,
   selectedCategoryState,
 } from "@/store/rootAtoms";
+import IntroMessage from "./IntroMessage";
 
 const NewsList = () => {
   const [news, setNews] = useRecoilState(newsState);
@@ -18,25 +19,28 @@ const NewsList = () => {
   }, [category]);
 
   return (
-    <div className={`${styles.newsList} ${!isDay ? styles.nightList : ""}`}>
-      {news.map((news, index) => (
-        <div
-          className={styles.newsCard}
-          key={index}
-          onClick={() => window.open(news.url, "_blank")}
-        >
-          <img
-            className={styles.newsThumbnail}
-            src={news.urlToImage}
-            alt="썸네일"
-          ></img>
-          <div className={styles.newsContent}>
-            <div className={styles.newsTitle}>{news.title}</div>
-            <div className={styles.newsDescription}>{news.description}</div>
+    <>
+      <div className={`${styles.newsList} ${!isDay ? styles.nightList : ""}`}>
+        <IntroMessage></IntroMessage>
+        {news.map((news, index) => (
+          <div
+            className={styles.newsCard}
+            key={index}
+            onClick={() => window.open(news.url, "_blank")}
+          >
+            <img
+              className={styles.newsThumbnail}
+              src={news.urlToImage}
+              alt="썸네일"
+            ></img>
+            <div className={styles.newsContent}>
+              <div className={styles.newsTitle}>{news.title}</div>
+              <div className={styles.newsDescription}>{news.description}</div>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 
