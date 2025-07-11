@@ -1,7 +1,15 @@
-import { NEWS_API_TOP_HEADLINES, NEWS_API_KEY } from "@/constanats";
+import {
+  NEWS_API_TOP_HEADLINES,
+  NEWS_API_BASEURL,
+  NEWS_API_KEY,
+} from "@/constanats";
 
-export const fetchTopNews = async () => {
-  const url = `${NEWS_API_TOP_HEADLINES}?country=us&pageSize=20&apiKey=${NEWS_API_KEY}`;
+export const fetchTopNews = async (category) => {
+  console.log(category);
+  const url =
+    category === "Home"
+      ? `${NEWS_API_BASEURL}/everything?q=latest&pageSize=20&apiKey=${NEWS_API_KEY}`
+      : `${NEWS_API_TOP_HEADLINES}?country=us&pageSize=20&category=${category}&apiKey=${NEWS_API_KEY}`;
   try {
     const res = await fetch(url);
     if (!res.ok) {

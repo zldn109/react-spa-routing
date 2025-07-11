@@ -1,17 +1,16 @@
 import styles from "@/styles/components/NewsList.module.scss";
 import { useEffect, useState } from "react";
 import { fetchTopNews } from "@/api/api.js";
-import { useRecoilState } from "recoil";
-import { newsState } from "@/store/rootAtoms";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { newsState, selectedCategoryState } from "@/store/rootAtoms";
 
 const NewsList = () => {
   const [news, setNews] = useRecoilState(newsState);
+  const category = useRecoilValue(selectedCategoryState);
 
   useEffect(() => {
-    fetchTopNews().then((data) => {
-      setNews(data);
-    });
-  }, []);
+    fetchTopNews(category).then(setNews);
+  }, [category]);
 
   return (
     <div className={styles.newsList}>
