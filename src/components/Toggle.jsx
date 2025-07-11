@@ -13,7 +13,7 @@ export const Toggle = () => {
       <div
         className={`${styles.toggleContainer} ${isDay ? styles.checked : ""}`}
       >
-        <span className={styles.icon}>🌞</span>
+        <span className={styles.icon}>☀️</span>
         <span className={styles.icon}>🌙</span>
         <div
           className={`${styles.toggleCircle} ${isDay ? styles.checked : ""}`}
