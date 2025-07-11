@@ -5,7 +5,6 @@ import {
 } from "@/constanats";
 
 export const fetchTopNews = async (category) => {
-  console.log(category);
   const url =
     category === "Home"
       ? `${NEWS_API_BASEURL}/everything?q=latest&pageSize=20&apiKey=${NEWS_API_KEY}`

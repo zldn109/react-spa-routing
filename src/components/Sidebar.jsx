@@ -1,6 +1,7 @@
 import { selectedCategoryState } from "@/store/rootAtoms";
 import styles from "@/styles/components/Sidebar.module.scss";
 import { useRecoilState } from "recoil";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const categories = [
@@ -18,6 +19,8 @@ const Sidebar = () => {
     selectedCategoryState
   );
 
+  const navigate = useNavigate();
+
   return (
     <aside className={styles.sidebar}>
       <ul className={styles.categoryList}>
@@ -27,7 +30,10 @@ const Sidebar = () => {
             className={`${styles.categoryItem} ${
               selectedCategory === cat ? styles.active : ""
             }`}
-            onClick={() => setSelectedCategory(cat)}
+            onClick={() => {
+              setSelectedCategory(cat);
+              navigate(`/${cat}`);
+            }}
           >
             {cat}
           </li>
