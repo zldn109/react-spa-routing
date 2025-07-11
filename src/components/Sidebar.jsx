@@ -1,6 +1,6 @@
-import { selectedCategoryState } from "@/store/rootAtoms";
+import { isDayState, selectedCategoryState } from "@/store/rootAtoms";
 import styles from "@/styles/components/Sidebar.module.scss";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
@@ -18,11 +18,12 @@ const Sidebar = () => {
   const [selectedCategory, setSelectedCategory] = useRecoilState(
     selectedCategoryState
   );
+  const isDay = useRecoilValue(isDayState);
 
   const navigate = useNavigate();
 
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${!isDay ? styles.nightSidebar : ""}`}>
       <ul className={styles.categoryList}>
         {categories.map((cat) => (
           <li

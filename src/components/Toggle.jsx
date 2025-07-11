@@ -1,12 +1,12 @@
 import { useRecoilState } from "recoil";
 import { isDayState } from "@/store/rootAtoms";
 import styles from "@/styles/components/Toggle.module.scss";
+import { useEffect } from "react";
 
 export const Toggle = () => {
   const [isDay, setIsDay] = useRecoilState(isDayState);
 
   const toggleHandler = () => setIsDay(!isDay);
-  console.log(isDay);
 
   return (
     <div className={styles.toggleWrapper} onClick={toggleHandler}>

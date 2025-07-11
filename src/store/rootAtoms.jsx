@@ -12,5 +12,5 @@ export const newsState = atom({
 
 export const isDayState = atom({
   key: "idDayState",
-  default: true,
+  default: false,
 });

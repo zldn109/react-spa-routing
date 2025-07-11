@@ -7,8 +7,6 @@
   padding-left: 4rem;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--black);
-
   .categoryList {
     list-style: none;
 
@@ -33,6 +31,19 @@
           background-color: var(--primary);
           border-radius: 2px;
         }
+      }
+    }
+  }
+}
+
+.nightSidebar {
+  background: var(--black);
+  color: var(--white);
+
+  .categoryList {
+    .categoryItem {
+      &.active::before {
+        background-color: var(--white); // 여기만 바꾸면 됨
       }
     }
   }

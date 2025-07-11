@@ -2,18 +2,23 @@ import styles from "@/styles/components/NewsList.module.scss";
 import { useEffect, useState } from "react";
 import { fetchTopNews } from "@/api/api.js";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { newsState, selectedCategoryState } from "@/store/rootAtoms";
+import {
+  isDayState,
+  newsState,
+  selectedCategoryState,
+} from "@/store/rootAtoms";
 
 const NewsList = () => {
   const [news, setNews] = useRecoilState(newsState);
   const category = useRecoilValue(selectedCategoryState);
+  const isDay = useRecoilValue(isDayState);
 
   useEffect(() => {
     fetchTopNews(category).then(setNews);
   }, [category]);
 
   return (
-    <div className={styles.newsList}>
+    <div className={`${styles.newsList} ${!isDay ? styles.nightList : ""}`}>
       {news.map((news, index) => (
         <div
           className={styles.newsCard}

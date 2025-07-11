@@ -49,3 +49,16 @@
     }
   }
 }
+
+.nightList {
+  background: var(--night2);
+  .newsCard {
+    background: var(--night3);
+    .newsTitle {
+      color: var(--white);
+    }
+    .newsDescription {
+      color: var(--white);
+    }
+  }
+}
