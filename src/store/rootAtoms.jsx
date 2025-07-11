@@ -6,6 +6,11 @@ export const selectedCategoryState = atom({
 });
 
 export const newsState = atom({
-  key: "newsStae",
+  key: "newsState",
   default: [],
+});
+
+export const isDayState = atom({
+  key: "idDayState",
+  default: true,
 });
