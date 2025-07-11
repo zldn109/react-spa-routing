@@ -15,7 +15,11 @@ const NewsList = () => {
   return (
     <div className={styles.newsList}>
       {news.map((news, index) => (
-        <div className={styles.newsCard} key={index}>
+        <div
+          className={styles.newsCard}
+          key={index}
+          onClick={() => window.open(news.url, "_blank")}
+        >
           <img
             className={styles.newsThumbnail}
             src={news.urlToImage}
