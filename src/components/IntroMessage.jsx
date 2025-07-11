@@ -1,4 +1,4 @@
-import { selectedCategoryState } from "@/store/rootAtoms";
+import { isDayState, selectedCategoryState } from "@/store/rootAtoms";
 import { useRecoilValue } from "recoil";
 import styles from "@/styles/components/IntroMessage.module.scss";
 
@@ -64,9 +64,14 @@ const categoryMessage = {
 const IntroMessage = () => {
   const category = useRecoilValue(selectedCategoryState);
   const message = categoryMessage[category];
+  const isDay = useRecoilValue(isDayState);
 
   return (
-    <div className={styles.introMessage}>
+    <div
+      className={`${styles.introMessage} ${
+        !isDay ? styles.nightIntroMessage : ""
+      }`}
+    >
       <p>{message}</p>
     </div>
   );
