@@ -1,3 +1,5 @@
+@import "@/styles/variables";
+
 .newsList {
   display: flex;
   flex-direction: column;
@@ -5,6 +7,18 @@
   padding: 2rem;
   margin: 2rem 2rem 2rem calc(var(--sidebar-width) + 2rem);
   background: var(--gray200);
+
+  @media screen and (max-width: $viewport-xl) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: $viewport-lg) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: $viewport-md) {
+    width: 90%;
+  }
 
   .newsCard {
     display: flex;
@@ -25,7 +39,7 @@
     }
 
     .newsContent {
-      width: 80%;
+      flex: 1;
       display: flex;
       flex-direction: column;
 
