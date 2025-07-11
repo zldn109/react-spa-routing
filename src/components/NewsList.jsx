@@ -1,9 +1,11 @@
 import styles from "@/styles/components/NewsList.module.scss";
 import { useEffect, useState } from "react";
 import { fetchTopNews } from "@/api/api.js";
+import { useRecoilState } from "recoil";
+import { newsState } from "@/store/rootAtoms";
 
 const NewsList = () => {
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useRecoilState(newsState);
 
   useEffect(() => {
     fetchTopNews().then((data) => {

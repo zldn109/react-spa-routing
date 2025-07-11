@@ -1,5 +1,6 @@
+import { selectedCategoryState } from "@/store/rootAtoms";
 import styles from "@/styles/components/Sidebar.module.scss";
-import { useState } from "react";
+import { useRecoilState } from "recoil";
 
 const Sidebar = () => {
   const categories = [
@@ -13,7 +14,9 @@ const Sidebar = () => {
     "technology",
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState("Home");
+  const [selectedCategory, setSelectedCategory] = useRecoilState(
+    selectedCategoryState
+  );
 
   return (
     <aside className={styles.sidebar}>
