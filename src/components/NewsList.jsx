@@ -7,7 +7,6 @@ const NewsList = () => {
 
   useEffect(() => {
     fetchTopNews().then((data) => {
-      console.log(data);
       setNews(data);
     });
   }, []);

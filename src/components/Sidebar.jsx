@@ -1,4 +1,5 @@
 import styles from "@/styles/components/Sidebar.module.scss";
+import { useState } from "react";
 
 const Sidebar = () => {
   const categories = [
@@ -12,11 +13,19 @@ const Sidebar = () => {
     "technology",
   ];
 
+  const [selectedCategory, setSelectedCategory] = useState("Home");
+
   return (
     <aside className={styles.sidebar}>
       <ul className={styles.categoryList}>
         {categories.map((cat) => (
-          <li key={cat} className={styles.categoryItem}>
+          <li
+            key={cat}
+            className={`${styles.categoryItem} ${
+              selectedCategory === cat ? styles.active : ""
+            }`}
+            onClick={() => setSelectedCategory(cat)}
+          >
             {cat}
           </li>
         ))}
