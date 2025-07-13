@@ -23,7 +23,7 @@ export const fetchTopNews = async (category) => {
     return data.articles;
   } catch (err) {
     console.log(err.message);
-    toast.error(err.message);
+    toast.error(err.message, { id: "error" });
     throw err;
   }
 };
