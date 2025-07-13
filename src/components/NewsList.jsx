@@ -7,7 +7,6 @@ import {
   newsState,
   selectedCategoryState,
 } from "@/store/rootAtoms";
-import IntroMessage from "./IntroMessage";
 
 const NewsList = () => {
   const [news, setNews] = useRecoilState(newsState);
@@ -21,7 +20,7 @@ const NewsList = () => {
   return (
     <>
       <div className={`${styles.newsList} ${!isDay ? styles.nightList : ""}`}>
-        <IntroMessage></IntroMessage>
+        <IntroMessage />
         {news.map((news, index) => (
           <div
             className={styles.newsCard}
