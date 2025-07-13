@@ -3,6 +3,7 @@ import {
   NEWS_API_BASEURL,
   NEWS_API_KEY,
 } from "@/constanats";
+import { toast } from "sonner";
 
 export const fetchTopNews = async (category) => {
   const url =
@@ -21,7 +22,8 @@ export const fetchTopNews = async (category) => {
     }
     return data.articles;
   } catch (err) {
-    console.log("err.message");
+    console.log(err.message);
+    toast.error(err.message);
     throw err;
   }
 };
