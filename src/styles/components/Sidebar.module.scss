@@ -7,29 +7,35 @@
   padding-left: 4rem;
   display: flex;
   flex-direction: column;
+
   .categoryList {
     list-style: none;
 
-    .categoryItem {
-      margin-bottom: 1.5rem;
-      font-size: 1.4rem;
-      cursor: pointer;
-      position: relative;
+    .link {
+      text-decoration: none;
+      color: black;
 
-      &.active {
-        font-weight: bold;
-        color: var(--primary-color);
+      .categoryItem {
+        margin-bottom: 1.5rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+        position: relative;
 
-        &::before {
-          content: "";
-          position: absolute;
-          left: -2rem;
-          top: 0;
-          bottom: 0;
-          width: 0.5rem;
-          margin-right: 1rem;
-          background-color: var(--primary);
-          border-radius: 2px;
+        &.active {
+          font-weight: bold;
+          color: var(--primary-color);
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            bottom: 0;
+            width: 0.5rem;
+            margin-right: 1rem;
+            background-color: var(--primary);
+            border-radius: 2px;
+          }
         }
       }
     }
