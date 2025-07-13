@@ -1,17 +1,13 @@
 import styles from "@/styles/components/NewsList.module.scss";
 import { useEffect, useState } from "react";
 import { fetchTopNews } from "@/api/api.js";
-import { useRecoilState, useRecoilValue } from "recoil";
-import {
-  isDayState,
-  newsState,
-  selectedCategoryState,
-} from "@/store/rootAtoms";
+import { useRecoilValue } from "recoil";
+import { isDayState, selectedCategoryState } from "@/store/rootAtoms";
 import IntroMessage from "@/components/IntroMessage";
 import fallbackImg from "@/assets/fallbackImg.jpeg";
 
 const NewsList = () => {
-  const [news, setNews] = useRecoilState(newsState);
+  const [news, setNews] = useState([]);
   const category = useRecoilValue(selectedCategoryState);
   const isDay = useRecoilValue(isDayState);
 
