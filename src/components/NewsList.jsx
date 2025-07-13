@@ -8,6 +8,7 @@ import {
   selectedCategoryState,
 } from "@/store/rootAtoms";
 import IntroMessage from "@/components/IntroMessage";
+import fallbackImg from "@/assets/fallbackImg.jpeg";
 
 const NewsList = () => {
   const [news, setNews] = useRecoilState(newsState);
@@ -18,11 +19,15 @@ const NewsList = () => {
     fetchTopNews(category).then(setNews);
   }, [category]);
 
+  const filteredNews = news.filter(
+    (news) => news.title && news.description && news.urlToImage && news.url
+  );
+
   return (
     <>
       <div className={`${styles.newsList} ${!isDay ? styles.nightList : ""}`}>
         <IntroMessage />
-        {news.map((news) => (
+        {filteredNews.map((news) => (
           <a
             className={styles.newsCard}
             key={news.url}
@@ -34,6 +39,10 @@ const NewsList = () => {
               className={styles.newsThumbnail}
               src={news.urlToImage}
               alt="썸네일"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = fallbackImg;
+              }}
             />
             <div className={styles.newsContent}>
               <div className={styles.newsTitle}>{news.title}</div>
