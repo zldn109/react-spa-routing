@@ -24,18 +24,18 @@ const Sidebar = () => {
     <aside className={`${styles.sidebar} ${!isDay ? styles.nightSidebar : ""}`}>
       <ul className={styles.categoryList}>
         {categories.map((cat) => (
-          <Link to={`/${cat}`} key={cat} className={styles.link}>
-            <li
-              className={`${styles.categoryItem} ${
-                selectedCategory === cat ? styles.active : ""
-              }`}
-              onClick={() => {
-                setSelectedCategory(cat);
-              }}
-            >
+          <li
+            className={`${styles.categoryItem} ${
+              selectedCategory === cat ? styles.active : ""
+            }`}
+            onClick={() => {
+              setSelectedCategory(cat);
+            }}
+          >
+            <Link to={`/${cat}`} key={cat} className={styles.link}>
               {cat === "home" ? "Home" : cat}
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </aside>
