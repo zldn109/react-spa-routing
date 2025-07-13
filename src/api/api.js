@@ -6,7 +6,7 @@ import {
 
 export const fetchTopNews = async (category) => {
   const url =
-    category === "Home"
+    category === "home"
       ? `${NEWS_API_BASEURL}/everything?q=latest&pageSize=20&apiKey=${NEWS_API_KEY}`
       : `${NEWS_API_TOP_HEADLINES}?country=us&pageSize=20&category=${category}&apiKey=${NEWS_API_KEY}`;
   try {

@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil";
 import styles from "@/styles/components/IntroMessage.module.scss";
 
 const categoryMessage = {
-  Home: (
+  home: (
     <>
       세상의 흐름을 한 눈에,
       <br />

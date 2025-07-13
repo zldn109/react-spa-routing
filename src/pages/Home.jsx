@@ -6,7 +6,6 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import styles from "@/styles/pages/Home.module.scss";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import IntroMessage from "@/components/IntroMessage";
 
 function Home() {
   const { category } = useParams();

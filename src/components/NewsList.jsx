@@ -7,6 +7,7 @@ import {
   newsState,
   selectedCategoryState,
 } from "@/store/rootAtoms";
+import IntroMessage from "@/components/IntroMessage";
 
 const NewsList = () => {
   const [news, setNews] = useRecoilState(newsState);

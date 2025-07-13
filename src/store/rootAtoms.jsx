@@ -2,7 +2,7 @@ import { atom, selector } from "recoil";
 
 export const selectedCategoryState = atom({
   key: "selectedCategoryState",
-  default: "Home",
+  default: "home",
 });
 
 export const newsState = atom({

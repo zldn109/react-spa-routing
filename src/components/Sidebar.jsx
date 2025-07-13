@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const categories = [
-    "Home",
+    "home",
     "business",
     "entertainment",
     "general",
@@ -36,7 +36,7 @@ const Sidebar = () => {
               navigate(`/${cat}`);
             }}
           >
-            {cat}
+            {cat === "home" ? "Home" : cat}
           </li>
         ))}
       </ul>
