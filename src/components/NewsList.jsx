@@ -22,10 +22,10 @@ const NewsList = () => {
     <>
       <div className={`${styles.newsList} ${!isDay ? styles.nightList : ""}`}>
         <IntroMessage />
-        {news.map((news, index) => (
+        {news.map((news) => (
           <a
             className={styles.newsCard}
-            key={index}
+            key={news.url}
             href={news.url}
             target="_blank"
             rel="noopener noreferrer"
