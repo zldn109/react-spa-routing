@@ -23,10 +23,12 @@ const NewsList = () => {
       <div className={`${styles.newsList} ${!isDay ? styles.nightList : ""}`}>
         <IntroMessage />
         {news.map((news, index) => (
-          <div
+          <a
             className={styles.newsCard}
             key={index}
-            onClick={() => window.open(news.url, "_blank")}
+            href={news.url}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <img
               className={styles.newsThumbnail}
@@ -37,7 +39,7 @@ const NewsList = () => {
               <div className={styles.newsTitle}>{news.title}</div>
               <div className={styles.newsDescription}>{news.description}</div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </>
