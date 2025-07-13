@@ -12,11 +12,16 @@ export const fetchTopNews = async (category) => {
   try {
     const res = await fetch(url);
     if (!res.ok) {
-      throw new Error("뉴스데이터를 불러오는데 문제가 발생했습니다.");
+      throw new Error("HTTP 요청에 실패했습니다.");
     }
     const data = await res.json();
+
+    if (data.status === "error") {
+      throw new Error(data.message || "API 요청 중 오류가 발생했습니다.");
+    }
     return data.articles;
   } catch (err) {
+    console.log("err.message");
     throw err;
   }
 };
