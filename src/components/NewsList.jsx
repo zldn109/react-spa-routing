@@ -32,7 +32,7 @@ const NewsList = () => {
               className={styles.newsThumbnail}
               src={news.urlToImage}
               alt="썸네일"
-            ></img>
+            />
             <div className={styles.newsContent}>
               <div className={styles.newsTitle}>{news.title}</div>
               <div className={styles.newsDescription}>{news.description}</div>

@@ -28,8 +28,8 @@ function Home() {
     <>
       <Navbar />
       <main className={`${styles.base} ${!isDay ? styles.night : ""}`}>
-        <Sidebar></Sidebar>
-        <NewsList></NewsList>
+        <Sidebar />
+        <NewsList />
       </main>
     </>
   );
