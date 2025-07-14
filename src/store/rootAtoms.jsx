@@ -7,5 +7,5 @@ export const selectedCategoryState = atom({
 
 export const isDayState = atom({
   key: "idDayState",
-  default: true,
+  default: JSON.parse(localStorage.getItem("isDay")) ?? true,
 });

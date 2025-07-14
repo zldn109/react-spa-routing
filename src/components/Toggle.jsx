@@ -6,7 +6,12 @@ import { useEffect } from "react";
 export const Toggle = () => {
   const [isDay, setIsDay] = useRecoilState(isDayState);
 
-  const toggleHandler = () => setIsDay(!isDay);
+  const toggleHandler = () =>
+    setIsDay((prev) => {
+      const next = !prev;
+      localStorage.setItem("isDay", JSON.stringify(next));
+      return next;
+    });
 
   return (
     <div className={styles.toggleWrapper} onClick={toggleHandler}>
