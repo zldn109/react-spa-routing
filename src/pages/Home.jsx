@@ -18,8 +18,8 @@ function Home() {
     if (category && category !== selectedCategory) {
       setSelectedCategory(category);
     }
-    if (!category && selectedCategory !== "Home") {
-      setSelectedCategory("Home");
+    if (!category && selectedCategory !== "home") {
+      setSelectedCategory("home");
     }
   }, [category]);
 

@@ -25,6 +25,7 @@ const Sidebar = () => {
       <ul className={styles.categoryList}>
         {categories.map((cat) => (
           <li
+            key={cat}
             className={`${styles.categoryItem} ${
               selectedCategory === cat ? styles.active : ""
             }`}
@@ -32,7 +33,7 @@ const Sidebar = () => {
               setSelectedCategory(cat);
             }}
           >
-            <Link to={`/${cat}`} key={cat} className={styles.link}>
+            <Link to={`/${cat}`} className={styles.link}>
               {cat === "home" ? "Home" : cat}
             </Link>
           </li>
