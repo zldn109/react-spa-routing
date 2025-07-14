@@ -1,24 +1,12 @@
-@import "@/styles/variables";
-
 .newsList {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
+  width: calc(100% - var(--sidebar-width) - 4rem);
+  min-height: 100vh;
   margin: 2rem 2rem 2rem calc(var(--sidebar-width) + 2rem);
   background: var(--gray200);
-
-  @media screen and (max-width: $viewport-xl) {
-    width: 80%;
-  }
-
-  @media screen and (max-width: $viewport-lg) {
-    width: 85%;
-  }
-
-  @media screen and (max-width: $viewport-md) {
-    width: 90%;
-  }
 
   .newsCard {
     display: flex;
@@ -45,6 +33,8 @@
       width: 80%;
       display: flex;
       flex-direction: column;
+      width: 100%;
+      overflow: hidden;
 
       .newsTitle {
         font-weight: bold;
@@ -68,7 +58,7 @@
 }
 
 .nightList {
-  background: var(--night2);
+  background: var(--night2) !important;
   .newsCard {
     background: var(--night3);
     .newsTitle {
