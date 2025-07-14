@@ -16,7 +16,12 @@ const NewsList = () => {
   }, [category]);
 
   const filteredNews = news.filter(
-    (news) => news.title && news.description && news.urlToImage && news.url
+    (news) =>
+      news.title &&
+      news.description &&
+      news.urlToImage &&
+      news.url &&
+      news.source.name
   );
 
   return (
@@ -43,6 +48,7 @@ const NewsList = () => {
             <div className={styles.newsContent}>
               <div className={styles.newsTitle}>{news.title}</div>
               <div className={styles.newsDescription}>{news.description}</div>
+              <div className={styles.newsSource}>{news.source.name}</div>
             </div>
           </a>
         ))}

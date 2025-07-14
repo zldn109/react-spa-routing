@@ -53,6 +53,11 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+      .newsSource {
+        color: var(--gray500);
+        margin-top: 0.6rem;
+      }
     }
   }
 }
