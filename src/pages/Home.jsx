@@ -4,8 +4,9 @@ import Sidebar from "@/components/Sidebar";
 import { isDayState, selectedCategoryState } from "@/store/rootAtoms";
 import { useRecoilState, useRecoilValue } from "recoil";
 import styles from "@/styles/pages/Home.module.scss";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useEffect } from "react";
+import { categories } from "@/components/Sidebar.jsx";
 
 function Home() {
   const { category } = useParams();
@@ -13,6 +14,10 @@ function Home() {
     selectedCategoryState
   );
   const isDay = useRecoilValue(isDayState);
+
+  if (category && !categories.includes(category)) {
+    return <Navigate to="/not-found" replace />;
+  }
 
   useEffect(() => {
     if (category && category !== selectedCategory) {

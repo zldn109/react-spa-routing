@@ -3,18 +3,18 @@ import styles from "@/styles/components/Sidebar.module.scss";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
-  const categories = [
-    "home",
-    "business",
-    "entertainment",
-    "general",
-    "health",
-    "science",
-    "sports",
-    "technology",
-  ];
+export const categories = [
+  "home",
+  "business",
+  "entertainment",
+  "general",
+  "health",
+  "science",
+  "sports",
+  "technology",
+];
 
+const Sidebar = () => {
   const [selectedCategory, setSelectedCategory] = useRecoilState(
     selectedCategoryState
   );
@@ -34,7 +34,7 @@ const Sidebar = () => {
             }}
           >
             <Link to={`/${cat}`} className={styles.link}>
-              {cat === "home" ? "Home" : cat}
+              {cat}
             </Link>
           </li>
         ))}
